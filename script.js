@@ -19,50 +19,7 @@ function returnStringNumber (obj){
 };
 
 console.log(returnStringNumber(obj));
-// Мой вариант ниже
 
-function returnStringNum (obj) {
-    let length = [];
-    for (const key in obj) {
-        if (typeof(obj[key]) == "string")
-        length.push(obj[key].length);           
-    }
-    return length;
-};
-
-console.log(returnStringNum(obj));
-
-// Мой вариант который первый, и вот из этого варианта я не знал как 
-// сделать в функции чтобы она показывала результат. Еще я думал каждый ключ отдельно.
-// можешь подсказать как? Потому что рили сложно мне это все дается =((
-
-    for (const key in obj) {
-        let element = obj[key];
-        let length = element.length;
-        console.log(length);
-}
-
-
-// вторая задача, как я сделал, понятное дело бред, но вот вариант.
-// я так понял это просто перезаписывает первый obj, и в дальнейшем не смогу его использовать?
-const obj2 = {
-    age:null, 
-    height: null, 
-    name: '',
-    surname: '',
-
-}
-
-function createObject (){
-
-    let result;
-    result = Object.assign(obj, obj2);
-    return result;
-
-}
-
-let result = createObject()
-console.log(result);
 
 //Вторая задача
 
@@ -91,9 +48,9 @@ function valueLength (element) {
     switch (typeof element) {
         case 'string':
             return element.length;
-        case 'boolean': //не совсем понял зачем здесь булевое значение?
-            return Number(element); //если true, оно просто вернет число записаное в ключе?
-        case 'function': // зачем function? Извини не понимаю.
+        case 'boolean': 
+            return Number(element); 
+        case 'function':
             return 0;
         default:
             return element;
@@ -112,5 +69,3 @@ function copyOfObjectElements (obj3) {
 let copyOfObjectValues = copyOfObjectElements(obj3);
 
 console.log(copyOfObjectValues);
-
-// Денис, сори за вопросы в коментах, но сможешь мне на них ответить пожалуйста?
