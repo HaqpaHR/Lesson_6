@@ -1,4 +1,4 @@
-'use strict'
+
 
 const obj = {
     age: 20,
